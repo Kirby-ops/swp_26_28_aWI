@@ -1,3 +1,5 @@
 ﻿Console.WriteLine("Hello, SWP!");
-﻿Console.WriteLine("push any button to exit...");
+string HelloSWP = Console.Readline();
+Console.Writeline(HelloSWP);
+Console.WriteLine("push any button to exit...");
 Console.ReadKey();
