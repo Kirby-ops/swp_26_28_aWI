@@ -1,5 +1,5 @@
 ﻿Console.WriteLine("Hello, SWP!");
-string input = Console.ReadLine()
+string input = Console.ReadLine();
 
 string type = "String";
 
