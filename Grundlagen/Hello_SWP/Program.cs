@@ -1,14 +1,18 @@
 ﻿Console.WriteLine("Hello, SWP!");
-string HelloSWP = Console.ReadLine();
+string input = Console.ReadLine()
 
-if (bool.TryParse(HelloSWP, out _))
-    Console.WriteLine("Bool");
-else if (int.TryParse(HelloSWP, out _))
-    Console.WriteLine("Integer");
-else if (double.TryParse(HelloSWP, out _))
-    Console.WriteLine("Double");
-else
-    Console.WriteLine("String");
+string type = "String";
 
-Console.WriteLine("push any button to exit...");
+if (double.TryParse(input, out _))
+    type = "Double";
+
+if (int.TryParse(input, out _))
+    type = "Integer";
+
+if (bool.TryParse(input, out _))
+    type = "Bool";
+
+Console.WriteLine(type);
+
+Console.WriteLine("Push any button to exit...");
 Console.ReadKey();
