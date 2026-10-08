@@ -1,18 +1,37 @@
-﻿Console.WriteLine("Hello, SWP!");
-string input = Console.ReadLine();
+﻿
+Console.WriteLine("Geben sie eine Natürliche Zahl ein:");
+int zahl;
+int.TryParse(Console.ReadLine(), out zahl);
 
-string type = "String";
+Console.WriteLine("Bitte wählen sie eine Operation aus:");
+Console.WriteLine(" (1)... Quadrat\n (2)... Wurzel\n (3)... Fakultät");
 
-if (double.TryParse(input, out _))
-    type = "Double";
+int operation;
+int.TryParse(Console.ReadLine(), out operation);
 
-if (int.TryParse(input, out _))
-    type = "Integer";
+switch (operation)
+{
+    case 1:
+        int Quadrat = 0;
+        Quadrat = zahl * zahl;
+        Console.WriteLine("Die Quadrat Fläche ist: " + Quadrat);
+        break;
 
-if (bool.TryParse(input, out _))
-    type = "Bool";
+    case 2:
+        double Wurzel = Math.Sqrt(zahl);
+        Console.WriteLine("Die Wurzel ist: " + Wurzel);
+        break;
 
-Console.WriteLine(type);
+    case 3:
+        double Fakultät = 1;
+        for (int i = 1; i <= zahl; i++)
+        {
+            Fakultät *= i;
+        }
+        Console.WriteLine("Die Fakultät ist: " + Fakultät);
+        break;
 
-Console.WriteLine("Push any button to exit...");
-Console.ReadKey();
+    default:
+        Console.WriteLine("Ungültige Eingabe");
+        break;
+}
