@@ -4,7 +4,7 @@ int zahl;
 int.TryParse(Console.ReadLine(), out zahl);
 
 Console.WriteLine("Bitte wählen sie eine Operation aus:");
-Console.WriteLine(" (1)...Quadrat\n (2)...Wurzel\n (3)...Fakultaet");
+Console.WriteLine(" (1)... Quadrat\n (2)... Wurzel\n (3)... Fakultaet");
 
 int operation;
 int.TryParse(Console.ReadLine(), out operation);
