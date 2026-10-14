@@ -1,4 +1,6 @@
 ﻿
+using System.Numerics;
+
 Console.WriteLine("Geben sie eine Natürliche Zahl ein:");
 int zahl;
 int.TryParse(Console.ReadLine(), out zahl);
@@ -23,7 +25,7 @@ switch (operation)
         break;
 
     case 3:
-        int Fakultaet = 1;
+        BigInteger Fakultaet = 1;
         for (int i = 1; i <= zahl; i++)
         {
             Fakultaet *= i;
