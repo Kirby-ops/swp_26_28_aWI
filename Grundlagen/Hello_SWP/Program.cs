@@ -23,12 +23,12 @@ switch (operation)
         break;
 
     case 3:
-        double Fakultät = 1;
+        int Fakultaet = 1;
         for (int i = 1; i <= zahl; i++)
         {
-            Fakultät *= i;
+            Fakultaet *= i;
         }
-        Console.WriteLine("Die Fakultät ist: " + Fakultät);
+        Console.WriteLine("Die Fakultät ist: " + Fakultaet);
         break;
 
     default:
