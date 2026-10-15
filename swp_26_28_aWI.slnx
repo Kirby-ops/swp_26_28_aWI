@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="FirstOOP/FirstOOP.csproj" Id="93336c9f-72e2-49d1-958c-b96fe8b70d61" />
   <Project Path="Grundlagen/Hello_SWP/Hello_SWP.csproj" />
+  <Project Path="KuhTestProjekt/KuhTestProjekt.csproj" Id="69f3997b-be8c-4329-baff-8e841b2e0e2b" />
 </Solution>
