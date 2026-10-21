@@ -8,7 +8,7 @@ namespace KuhTestProjekt
         public void Setup()
         {
         }
-
+         
         [Test]
         public void KuhConstructor_IsCalled_SetsValuesCorrect()
         {
