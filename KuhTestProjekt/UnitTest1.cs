@@ -19,7 +19,7 @@ namespace KuhTestProjekt
         [Test]
         public void KuhConstructor_NameOfCowNull_ThrowsInvalidDataException()
         {
-            Assert.Throws<InvalidDataException>(() => new Kuh(null, "schwarz"));
+            Assert.Throws<InvalidDataException>(() => new Kuh("", "schwarz"));
         }
     }
 }
