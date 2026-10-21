@@ -14,26 +14,38 @@ int.TryParse(Console.ReadLine(), out operation);
 switch (operation)
 {
     case 1:
-        int Quadrat = 0;
-        Quadrat = zahl * zahl;
-        Console.WriteLine("Die Quadrat Fläche ist: " + Quadrat);
+        Console.WriteLine("Die Quadrat Fläche ist: " + Quadrat(zahl));
         break;
 
     case 2:
-        double Wurzel = Math.Sqrt(zahl);
-        Console.WriteLine("Die Wurzel ist: " + Wurzel);
+        Console.WriteLine("Die Wurzel ist: " + Wurzel(zahl));
         break;
 
     case 3:
-        BigInteger Fakultaet = 1;
-        for (int i = 1; i <= zahl; i++)
-        {
-            Fakultaet *= i;
-        }
-        Console.WriteLine("Die Fakultät ist: " + Fakultaet);
+        Console.WriteLine("Die Fakultät ist: " + Fakultaet(zahl));
         break;
 
     default:
         Console.WriteLine("Ungültige Eingabe");
         break;
+}
+
+static int Quadrat(int zahl)
+{
+    return zahl * zahl;
+}
+
+static double Wurzel(int zahl)
+{
+    return Math.Sqrt(zahl);
+}
+
+static BigInteger Fakultaet(int zahl)
+{
+    BigInteger ergebnis = 1;
+    for (int i = 1; i <= zahl; i++)
+    {
+        ergebnis *= i;
+    }
+    return ergebnis;
 }

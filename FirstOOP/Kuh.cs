@@ -23,6 +23,8 @@ namespace FirstOOP
         //Cionstructor for the class Kuh
         public Kuh(string name, string colour) //impliziter Rückgabewert ist ein Objekt der Klasse Kuh
         {
+            if (string.IsNullOrEmpty(name))
+                throw new InvalidDataException();
             _name = name;
             _colour = colour;
         }
