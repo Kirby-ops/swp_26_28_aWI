@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FirstOOP
 {
-    public class Kuh
+    public class Kuh : Tier
     {
         string _name; // private field for the name of the Kuh
         string _colour; // private field for the colour of the Kuh
