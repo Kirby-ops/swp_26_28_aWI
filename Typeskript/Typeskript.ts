@@ -12,19 +12,16 @@ class animal { //Basisklasse für Tiere
 
     public get Colour() { return this._colour}
     public set Colour(value: string) {this._colour = value;}
-
-    public makeSound() {
-        console.log("Animal sound");
-    }
+    public makeSound() {console.log("Animal sound");}
 
     public get BirthDate(): Date {
     return this._birthDate;
     }
 
     // Advanced: Alter berechnen
-    public getAge(): number {
+    public getAge(){
         let today = new Date();
-        return today.getFullYear() - this._birthDate.getFullYear();
+        console.log(today.getFullYear() - this._birthDate.getFullYear());
     }
 
     constructor(name: string, colour: string, birthDate: Date) {
@@ -71,5 +68,5 @@ console.log(myKuh2.Colour);
 console.log(myKuh1.BirthDate);
 
 // Alter ausgeben
-console.log(myKuh.getAge());
-console.log(myCat.getAge());
+myKuh.getAge();
+myCat.getAge();
