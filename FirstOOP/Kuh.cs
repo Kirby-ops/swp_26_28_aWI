@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
+
+
 namespace FirstOOP
 {
-    
-
-    class Cow : Animal // Abgeleitete Klasse
+    class Cow : Animal
     {
-        public Cow(string name, string colour, DateTime birthDate)
-            : base(name, colour, birthDate)
+        public Cow(string name, string colour)
+            : base(name, colour)
         {
         }
 
@@ -17,8 +17,13 @@ namespace FirstOOP
         {
             Console.WriteLine("Muuuuh");
         }
+
+        public override void MakeSound(int duration)
+        {
+            for (int i = 0; i < duration; i++)
+            {
+                Console.WriteLine("Muuuuh");
+            }
+        }
     }
-
-    
-
 }

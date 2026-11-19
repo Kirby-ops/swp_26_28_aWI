@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace FirstOOP
 {
-    class Animal // Basisklasse für Tiere
+    public class Animal
     {
-        private string _name = "";
-        private string _colour = "";
-        private DateTime _birthDate;
+        string _name = "";
+        string _colour = "";
 
         public string Name
         {
-            get
-            {
-                string myLocalVar = "myLocalVar";
-                return _name;
-            }
+            get { return _name; }
+            protected set { _name = value; }
         }
 
         public string Colour
@@ -30,29 +27,16 @@ namespace FirstOOP
             Console.WriteLine("Animal sound");
         }
 
-        public DateTime BirthDate
+        // Überladung 1: Ohne Parameter
+        public virtual void MakeSound(int duration)
         {
-            get { return _birthDate; }
+            Console.WriteLine("Animal sound for " + duration + " seconds");
         }
 
-        // Alter berechnen
-        public void GetAge()
+        public Animal(string name, string colour)
         {
-            DateTime today = DateTime.Now;
-
-            Console.WriteLine(
-                today.Year - _birthDate.Year
-            );
-        }
-
-        // Konstruktor
-        public Animal(string name, string colour, DateTime birthDate)
-        {
-            string myLocalVar = "myLocalVar";
-
             _name = name;
             _colour = colour;
-            _birthDate = birthDate;
         }
     }
 }
