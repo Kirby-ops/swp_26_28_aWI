@@ -1,9 +1,18 @@
 ﻿using FirstOOP;
 
-Console.WriteLine("Hello, World!");
-var myKuh = new Kuh("Paula", "schwarz"); //instanziate a new Kuh object with name "Paula and colour schwarz
+Cow myKuh = new Cow("Kuh1", "Weiß");
 
-var myKuh2 = new Kuh("Luna", "braun"); //instanziate a new Kuh object with name "Luna and colour braun
+myKuh.MakeSound();
+myKuh.MakeSound(3);
 
-Console.WriteLine(myKuh.Colour);
-Console.WriteLine(myKuh2.Colour);
+Cat myCat = new Cat("Frieda", "orange");
+
+myCat.MakeSound();
+myCat.MakeSound(2);
+
+var myAnimals = new List<Animal>();
+
+myAnimals.Add(myKuh);
+myAnimals.Add(myCat);
+
+
