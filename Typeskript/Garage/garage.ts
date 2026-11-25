@@ -1,92 +1,11 @@
-interface IVerkaufsartikel {
-    verkaufsNamen: string;
-    preis: number;
-}
+import type { IVerkaufsartikel } from "./IVerkaufsartikel.ts";
+import { Fahrzeug, Auto } from "./Fahrzeug.ts";
+import { Reifen } from "./Reifen.ts";
 
-class Fahrzeug implements IVerkaufsartikel { // Interface nur hier, nicht bei Auto/Fahrrad
-    private fahrzeugtyp: string;
-    private name: string;
-    verkaufsNamen: string;
-    preis: number;
-
-    get Fahrzeugtyp(): string {
-        return this.fahrzeugtyp;
-    }
-
-    get Name(): string {
-        return this.name;
-    }
-
-    constructor(fahrzeugtyp: string, name: string) {
-        this.fahrzeugtyp = fahrzeugtyp;
-        this.name = name;
-        this.verkaufsNamen = name;
-        this.preis = 0;
-    }
-}
-
-class Fahrrad extends Fahrzeug {
-    private anzahlGaenge: number;
-
-    get AnzahlGaenge(): number {
-        return this.anzahlGaenge;
-    }
-
-    constructor(fahrzeugtyp: string, name: string, anzahlGaenge: number) {
-        super(fahrzeugtyp, name);
-        this.anzahlGaenge = anzahlGaenge;
-    }
-}
-
-class Auto extends Fahrzeug {
-    private anzahlTueren: number;
-
-    get AnzahlTueren(): number {
-        return this.anzahlTueren;
-    }
-
-    constructor(fahrzeugtyp: string, name: string, anzahlTueren: number) {
-        super(fahrzeugtyp, name);
-        this.anzahlTueren = anzahlTueren;
-    }
-}
-
-class PKW extends Auto {
-    private motorTyp: string;
-    constructor(name: string, anzahlTueren: number, motorTyp: string) {
-        super("PKW", name, anzahlTueren);
-        this.motorTyp = motorTyp;
-    }
-}
-
-class LKW extends Auto {
-    private motorTyp: string;
-
-    constructor(name: string, anzahlTueren: number, motorTyp: string) {
-        super("LKW", name, anzahlTueren);
-        this.motorTyp = motorTyp;
-    }
-}
-
-class Reifen implements IVerkaufsartikel {
-    verkaufsNamen: string;
-    preis: number;
-    marke: string;
-    groesse: number;
-    typ: string;
-    constructor(marke: string, groesse: number, typ: string) {
-        this.marke = marke;
-        this.groesse = groesse;
-        this.typ = typ;
-        this.verkaufsNamen = marke;
-        this.preis = 100;
-    }
-}
-
-class Garage {
+export class Garage {
     public verkaufbareDinge: IVerkaufsartikel[] = [];
 
-    public addFahrzeug(fahrzeug: Fahrzeug): void { // GEÄNDERT: Fahrzeug statt IVerkaufsartikel
+    public addFahrzeug(fahrzeug: Fahrzeug): void {
         this.verkaufbareDinge.push(fahrzeug);
     }
 
@@ -110,30 +29,3 @@ class Garage {
         return this.verkaufbareDinge.filter(item => item instanceof Auto).length;
     }
 }
-
-var myBWMWith4Doors = new PKW("BMW", 4, "Benzin");
-console.log(myBWMWith4Doors.Fahrzeugtyp);
-console.log(myBWMWith4Doors.AnzahlTueren);
-var myBWMWith2Doors = new PKW("BMW", 2, "Benzin");
-console.log(myBWMWith2Doors.Fahrzeugtyp);
-console.log(myBWMWith2Doors.AnzahlTueren);
-var myMANWith2Doors = new LKW("MAN", 2, "Diesel");
-console.log(myMANWith2Doors.Fahrzeugtyp);
-console.log(myMANWith2Doors.AnzahlTueren);
-
-var myFahrrad = new Fahrrad("Fahrrad", "Mountainbike", 21);
-console.log(myFahrrad.Fahrzeugtyp);
-console.log(myFahrrad.AnzahlGaenge);
-
-var myGarage = new Garage();
-myGarage.addFahrzeug(myBWMWith4Doors);
-myGarage.addFahrzeug(myBWMWith2Doors);
-myGarage.addFahrzeug(myMANWith2Doors);
-myGarage.addFahrzeug(myFahrrad);
-// GEÄNDERT: anzahlFahrzeuge() mit Klammern aufrufen
-console.log(`Anzahl Fahrzeuge in der Garage: ${myGarage.anzahlFahrzeuge()} davon Autos: ${myGarage.anzahlAutos}`);
-
-myGarage.addReifen(new Reifen("Michelin", 16, "Sommerreifen"));
-myGarage.addReifen(new Reifen("Continental", 17, "Winterreifen"));
-
-console.log(`Verkaufbare Dinge in der Garage: ${myGarage.verkaufbareDinge.length}`);
